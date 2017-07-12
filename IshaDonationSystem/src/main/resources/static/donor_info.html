@@ -1,0 +1,112 @@
+<div class="col-md-9">
+	<div class="col-md-4" id="ddd">
+		<h3> Donor's Info</h3>
+	</div>
+	<div class="col-md-8" id="donorList">
+
+		<form>
+	 	<div class="input-group col-sm-4" style="float:left">
+					<input type="text" id="dsearch" class="form-control" placeholder="Search data here..." ng-model="SearchText">
+					</div>
+<!-- 				 <div id="searchBar">
+					<i class="fa fa-filter" style="float:left;font-size: 22px;margin-left: -27px;"></i>
+					<div class="input-group" style="margin-left: -5px;">
+   					<select class="form-control">
+					  <option>1</option>
+					  <option>2</option>
+					  <option>3</option>
+					  <option>4</option>
+					  <option>5</option>
+					</select>
+  					</div>
+					</div> -->
+				</form>
+</div>
+<div class="row" style="padding-left: 28px;margin-top: 110px;" >
+
+		<table class="table table-bordered table-hover" id="tableList">
+	    	<tr id="tableTr">
+	    		<!-- <th>ID</th> -->
+	    		<th>Donor ID</th>
+	    		<th>Donor's Name</th>
+	    		<th>Mobile Number</th>
+	    		<th>Email Id</th>
+	    		<th>Donations</th>
+	    		<th>Status</th>
+	    		<th>Actions</th>
+	    		
+	    	</tr>
+	    	<tbody>
+	    	<tr dir-paginate="details in ctrl.DonorsList | filter:SearchText|itemsPerPage:8">
+	    		<!-- <td>{{details.registrationUserid}}</td> -->
+	    		<td ng-show="!ctrl.edit[details.donorId]">{{details.donorId}}</td>
+	    		<td ng-show="!ctrl.edit[details.donorId]">{{details.donorName}}</td>
+	    		<td ng-show="!ctrl.edit[details.donorId]">{{details.donorPhoneNumber}}</td>
+	    		<td ng-show="!ctrl.edit[details.donorId]">{{details.donorEmail}}</td>
+	    		<td ng-show="!ctrl.edit[details.donorId]">Rs.1111</td>
+	    		<td ng-show="!ctrl.edit[details.donorId]">{{details.donorStatus}}</td>
+	    		<td ng-show="!ctrl.edit[details.donorId]">
+	    			<a href="#!ViewDonor"><button type="button" class="btn btn-warning" id ="view"  ng-click="ctrl.selectContact(details.donorId-1)"><i class="glyphicon glyphicon-eye-open" style="color:#000000;"></i>&nbsp; View</button></a>
+					<!-- <a href="#!EditDonor"><button class="btn btn-primary" ng-click=" ctrl.edit[details.donorId] = !ctrl.edit[details.donorId]" >Edit</button></a> -->
+					
+				</td>
+			    <dir-pagination-controls
+       max-size="100"
+       direction-links="true"
+       boundary-links="true" >
+    </dir-pagination-controls>
+			</tr>
+
+			</tbody>
+				  			    	
+				  </table>
+		  			
+		  			
+		  		</div>
+						
+					</div>
+					<div class="col-md-3">
+						<a href="#!CreateDonor"><button class="btn btn-primary" id="createDonor"><span><i class="glyphicon glyphicon-plus"></i></span>&nbsp;Create Donor</button></a>
+					</div>
+					
+<script>
+$("document").ready(function(){
+    $('[data-toggle="tooltip"]').tooltip();   
+    $('view').click(function(){
+    	$('#block1').hide();
+    	//console.log("sssssssssssss");
+    	$('#overlay').show();
+   		$('.frame').show();
+   });
+    $('#Bank_d').click(function(e){
+    	e.preventDefault();
+    	$('#Bank').fadeIn("300");
+    	$('#Bank_d').addClass('act');
+    	$('#Personal').hide();
+    	$('#Payment').hide();
+    	$('Personal_d').removeClass('act');
+    	$('#Payment_d').removeClass('act');
+    });
+    $('#Personal_d').click(function(e){
+    	e.preventDefault();
+    	$('#Personal').fadeIn("300");
+    	$('#Personal_d').addClass('act')
+    	$('#Bank').hide();
+    	$('#Payment').hide();
+    	$('#Bank_d').removeClass('act');
+    	$('#Payment_d').removeClass('act');
+    });
+    $('#Payment_d').click(function(e){
+    	e.preventDefault();
+    	$('#Payment').fadeIn("300");
+    	$('#Payment_d').addClass('act')
+    	$('#Personal').hide();
+    	$('#Bank').hide();
+    	$('#Personal_d').removeClass('act');
+    	$('#Bank_d').removeClass('act');
+    });
+    
+});
+</script>
+</body>
+</html>

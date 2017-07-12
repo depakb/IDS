@@ -1,0 +1,333 @@
+<div id="detailsPage">
+	<h4>{{ctrl.selectedContact.donorName}} Deatils </h4>
+</div>
+<div id="viewDetails">
+<div id="editButton" ng-show="!ctrl.edit[details.donorId]">
+	<button class="btn btn-primary btn-lg" ng-click=" ctrl.edit[details.donorId] = !ctrl.edit[details.donorId]"><i class="glyphicon glyphicon-pencil"></i>&nbsp;Edit</button>
+</div>
+<div class="form-group col-sm-2" id="status"  ng-show="ctrl.edit[details.donorId]">
+	<label>Status</label>
+	<select class="form-control col-sm-2">
+		<option>{{ctrl.selectedContact.donorStatus}}</option>
+		<option>In-Active</option>
+	</select>
+</div>
+	<div id="viewOuter">
+		<ul>
+			<li id="Personal_d"><a href="#Personal">Personal Details</a></li>
+			<li id="Bank_d"><a href="#Bank">Bank Details</a></li>
+			<li id="Payment_d"><a href="#Payment">Payment Deatails</a></li>
+		</ul>
+		<div id="Personal" >
+			<form  name="create" class="form-horizontal">
+				<div class="col-lg-12" id="per">
+					<div class="col-md-6">
+					<div class="form-group">
+		    			<label class="col-sm-4 control-label"> First Name</label>
+		    				<div class="col-sm-4">
+		      					<p ng-show="!ctrl.edit[details.donorId]">{{ctrl.selectedContact.donorName}}</p>
+		      					<p ng-show="ctrl.edit[details.donorId]"><input type="text" class="form-control" name="fname" placeholder="Name" aria-describedby="sizing-addon1" ng-model="ctrl.selectedContact.donorName" required ng-minlength="3" ng-maxlength="40"></p>
+						  		<span style="color:red" ng-show="create.fname.$dirty && create.fname.$error.required">The name is required.</span>
+                          		<span style="color:red" ng-show="create.fname.$dirty && create.fname.$error.minlength">Account Holder Name is too short.</span>
+                          		<span style="color:red" ng-show="create.fname.$dirty && create.fname.$error.maxlength">Account Holder Name is too long.</span>
+		    				</div>
+		  			</div>
+		  			<div class="form-group">
+		    			<label class="col-sm-4 control-label">Email Id</label>
+		    				<div class="col-sm-4">
+		      					<p ng-show="!ctrl.edit[details.donorId]">{{ctrl.selectedContact.donorEmail}}</p>
+		      					<p ng-show="ctrl.edit[details.donorId]"><input type="email" class="form-control" name="email" placeholder="Email" aria-describedby="sizing-addon1" ng-model="ctrl.selectedContact.donorEmail"></p>
+				    			<span style="color:red" ng-show="create.email.$dirty && create.email.$invalid"></span>
+			                    <span style="color:red" ng-show="create.email.$error.required">Email is required.</span><br>
+			                    <span style="color:red" ng-show="create.email.$error.email">Invalid email address.</span>
+		    				</div>
+		  			</div>
+		  			<div class="form-group">
+		    			<label class="col-sm-4 control-label">Mobile Number</label>
+		    				<div class="col-sm-4">
+		      					<p ng-show="!ctrl.edit[details.donorId]">{{ctrl.selectedContact.donorPhoneNumber}}</p>
+		      					<p ng-show="ctrl.edit[details.donorId]"><input type="text" class="form-control" name="mobile" placeholder="Mobile" aria-describedby="sizing-addon1" ng-model="ctrl.selectedContact.donorPhoneNumber" required ng-minlength="10" ng-maxlength="10" ng-pattern="/^[7-9][0-9]{9}$/"></p>
+				     			<span style="color:red" ng-show="create.mobile.$dirty && create.mobile.$error.pattern">Please enter valid number</span>
+		    				</div>
+		  			</div>
+		  			<div class="form-group">
+		    			<label class="col-sm-4 control-label">Reference Name_1</label>
+		    				<div class="col-sm-4">
+		      					<p ng-show="!ctrl.edit[details.donorId]">{{ctrl.selectedContact.donorRefName1}}</p>
+		      					<p ng-show="ctrl.edit[details.donorId]"><input type="text" class="form-control" name="Rname1" placeholder="Donor Refernce Name1" aria-describedby="sizing-addon1" ng-model="ctrl.selectedContact.donorRefName1"></p>
+		    				</div>
+		  			</div>
+		  			<div class="form-group">
+		    			<label class="col-sm-4 control-label">Reference Name_2</label>
+		    				<div class="col-sm-4">
+		      					 <p ng-show="!ctrl.edit[details.donorId]">{{ctrl.selectedContact.donorRefName2}}</p>
+		      					 <p ng-show="ctrl.edit[details.donorId]"><input type="text" class="form-control" name="Rname2" placeholder="Donor Refernce Name2" aria-describedby="sizing-addon1" ng-model="ctrl.selectedContact.donorRefName2"> </p>
+		    				</div>
+		  			</div>				
+				</div> 
+				<div class="col-md-6">
+					<div class="form-group">
+		    			<label class="col-sm-4 control-label">Address</label>
+		    				<div class="col-sm-4">
+		      					<!-- {{ctrl.selectedContact.donorAddress}} -->
+		    				</div>
+		  			</div>
+		  			<div class="form-group">
+		    			<label class="col-sm-4 control-label">Region</label>
+		    				<div class="col-sm-4">
+		      					<p ng-show="!ctrl.edit[details.donorId]">{{ctrl.selectedContact.donorRegion}}</p>
+				      			<p ng-show="ctrl.edit[details.donorId]"><select class="form-control" name="region" ng-model="ctrl.selectedContact.donorRegion" required>
+									<option>{{ctrl.selectedContact.donorRegion}}</option>
+			                      	<option value="" disabled>--Region--</option>    
+			                        <option>Andhra Pradesh</option>
+			                        <option>Telangana</option>
+		                      	</select></p>
+		                      	<span style="color:red" ng-show="create.region.$dirty && create.region.$error.required">Region</span>
+		    				</div>
+		  			</div>
+		  			<div class="form-group">
+		    			<label class="col-sm-4 control-label">City</label>
+		    				<div class="col-sm-4">
+		      					<p ng-show="!ctrl.edit[details.donorId]">{{ctrl.selectedContact.donorCity}}</p>
+		      				<p ng-show="ctrl.edit[details.donorId]"><select class="form-control" ng-model="ctrl.selectedContact.donorCity">
+		                      <option>{{ctrl.selectedContact.donorCity}}</option>
+		                       	<option value="" disabled>--City--</option>    
+		                        <option>Hyderabad</option>
+		                        <option>Vijayawada</option>
+		                        <option>Vizag</option>
+		                      </select></p>
+		    				</div>
+		  			</div>
+		  			<div class="form-group">
+		    			<label class="col-sm-4 control-label">State</label>
+		    				<div class="col-sm-4">
+		      					<p ng-show="!ctrl.edit[details.donorId]">{{ctrl.selectedContact.donorState}}</p>
+			      			 <p ng-show="ctrl.edit[details.donorId]"> <select class="form-control" ng-model="ctrl.selectedContact.donorState">
+								<option>{{ctrl.selectedContact.donorState}}</option>	                      	
+								<option value="" disabled>--State--</option>    
+		                        <option>Andhra Pradesh</option>
+		                        <option>Telangana</option>
+		                      </select></p>
+		    				</div>
+		  			</div>
+		  			<div class="form-group">
+		    			<label class="col-sm-4 control-label">Center</label>
+		    				<div class="col-sm-4">
+		      					<p ng-show="!ctrl.edit[details.donorId]">{{ctrl.selectedContact.donorcenter}}</p>
+		      					<p ng-show="ctrl.edit[details.donorId]"><select class="form-control"  ng-model="ctrl.selectedContact.donorcenter">
+			                      	 <option>{{ctrl.selectedContact.donorcenter}}</option>
+			                      	<option value="" disabled>--Center--</option>    
+			                        <option>Madhapur</option>
+			                        <option>Kukatpally</option>
+			                        <option>Ameerpet</option>
+			                        <option>Himayatnagar</option>
+			                        <option>Secunderabad</option>  
+			                        <option>Dilsukhnagar</option>
+			                        <option>Gachibowli</option>  
+			                        <option>Vizag</option> 
+		                       </select></p>
+		    				</div>
+		  			</div>
+				</div>
+				</div>
+	  		</form>
+		</div>	
+		
+		<div id="Bank" style="background:#ffffff">
+			<form class="form-horizontal">
+					<div class="form-group">
+		    			<label class="col-sm-4 control-label">Account Holder Name</label>
+		    				<div class="col-sm-4">
+		      					<p ng-show="!ctrl.edit[details.donorId]">{{ctrl.selectedContact.bankAccountholderName}}</p>
+		      					<p ng-show="ctrl.edit[details.donorId]"><input type="text" class="form-control" name="Aname" placeholder="Account Holder Name" aria-describedby="sizing-addon1" ng-model="ctrl.selectedContact.bankAccountholderName" required ng-minlength="3" ng-maxlength="40"></p>
+			      				<span style="color:red" ng-show="create.Aname.$dirty && create.Aname.$error.required">The Account Holder Name is required.</span><br>
+                           		<span style="color:red" ng-show="create.Aname.$dirty && create.Aname.$error.minlength">Account Holder Name is too short.</span>
+                            	<span style="color:red" ng-show="create.Aname.$dirty && create.Aname.$error.maxlength">Account Holder Name is too long.</span>
+		    				</div>
+		  			</div>
+		  			<div class="form-group">
+		    			<label class="col-sm-4 control-label">Account Number</label>
+		    				<div class="col-sm-4">
+		      					<p ng-show="!ctrl.edit[details.donorId]">{{ctrl.selectedContact.bankAccountNumber}}</p>
+		      					<p ng-show="ctrl.edit[details.donorId]"><input type="text" class="form-control" name="Anmbr" placeholder="Account No." aria-describedby="sizing-addon1" ng-model="ctrl.selectedContact.bankAccountNumber" required ng-minlength="10" ng-maxlength="18"></p>
+					     		<span style="color:red" ng-show="create.Anmbr.$dirty && create.Anmbr.$error.required">Account No is Required</span><br>
+                            	<span  style="color:red" ng-show="create.Anmbr.$dirty && create.Anmbr.$error.minlength">Account number is too short</span>
+                            	<span  style="color:red" ng-show="create.Anmbr.$dirty && create.Anmbr.$error.maxlength">Account number is too long</span>
+		    				</div>
+		  			</div>
+		  			<div class="form-group">
+		    			<label class="col-sm-4 control-label">Bank Name</label>
+		    				<div class="col-sm-4">
+		      					<p ng-show="!ctrl.edit[details.donorId]">{{ctrl.selectedContact.bankName}}</p>
+		      					<p ng-show="ctrl.edit[details.donorId]"><input type="text" class="form-control" placeholder="Bank Name" aria-describedby="sizing-addon1" ng-model="ctrl.selectedContact.bankName"></p>
+		    				</div>
+		  			</div>
+		  			<div class="form-group">
+		    			<label class="col-sm-4 control-label">Branch Name</label>
+		    				<div class="col-sm-4">
+		      					<p ng-show="!ctrl.edit[details.donorId]">{{ctrl.selectedContact.bankBranch}}</p>
+		      					<p ng-show="ctrl.edit[details.donorId]"><input type="text" class="form-control" placeholder="Branch" aria-describedby="sizing-addon1" ng-model="ctrl.selectedContact.bankBranch"></p>
+		    				</div>
+		  			</div>
+		  			<div class="form-group">
+		    			<label class="col-sm-4 control-label">IFSC Code</label>
+		    				<div class="col-sm-4">
+		      					<p ng-show="!ctrl.edit[details.donorId]">{{ctrl.selectedContact.bankIfscCode}}</p>
+		      					<p ng-show="ctrl.edit[details.donorId]"><input type="text" class="form-control" name="ifsc" placeholder="IFSC Code" aria-describedby="sizing-addon1" ng-model="ctrl.selectedContact.bankIfscCode" ng-required="false" ng-minlength="11" ng-maxlength="11"></p>
+					    		<span style="color:red" ng-show="create.ifsc.$dirty && create.ifsc.$error.required"></span>
+                           		<span  style="color:red" ng-show="((create.ifsc.$error.minlength || create.ifsc.$error.maxlength) && create.ifsc.$dirty)">IFSC code must be 11 digits</span>
+		    				</div>
+		  			</div>
+		  			<div class="form-group">
+		    			<label class="col-sm-4 control-label">MICR No.</label>
+		    				<div class="col-sm-4">
+		      					 <p ng-show="!ctrl.edit[details.donorId]">{{ctrl.selectedContact.bankMICR}}</p>
+		      					 <p ng-show="ctrl.edit[details.donorId]"><input type="text" class="form-control" name="micr" placeholder="MICR" aria-describedby="sizing-addon1" ng-model="ctrl.selectedContact.bankUMRN" ng-required="false" ng-minlength="9" ng-maxlength="9" ng-pattern="/^\d+([,.]\d+)?$/"></p>
+					    		<span style="color:red" ng-show="create.micr.$dirty && create.micr.$error.required"></span>
+		                        <span style="color:red" ng-show="create.micr.$dirty && create.micr.$error.pattern">MICR should be digits</span><br>
+		                        <span style="color:red" ng-show="((create.micr.$error.minlength || create.micr.$error.maxlength) && create.micr.$dirty) ">MICR must be 9 digits</span>
+		    				</div>
+		  			</div>
+					<div class="form-group">
+		    			<label class="col-sm-4 control-label">Account Type</label>
+		    				<div class="col-sm-4">
+		      					 <p ng-show="!ctrl.edit[details.donorId]">{{ctrl.selectedContact.bankAccountType}}</p>
+		      					 <p ng-show="ctrl.edit[details.donorId]"><select class="form-control" name="account_type" ng-model="ctrl.selectedContact.bankAccountType" required>
+							 		<option value="" disabled>--Account Type--</option>
+							 		<option ng-repeat="v in type" value="{{v.value}}" title="{{v.value}}">{{v.value}}</option>                   
+								</select></p>
+								<span style="color:red" ng-show="create.account_type.$dirty && create.account_type.$error.required">Account Type is Required</span>
+		    				</div>
+		  			</div>
+
+		  			<div class="form-group">
+		    			<label class="col-sm-4 control-label">BankUtilityCode</label>
+		    				<div class="col-sm-4">
+		      					 <!-- <p ng-show="!ctrl.edit[details.donorId]">{{ctrl.selectedContact.bankUtilityCode}}</p> -->
+		      					 {{ctrl.selectedContact.bankUtilityCode}}
+		    				</div>
+		  			</div>
+		  			<div class="form-group">
+		    			<label class="col-sm-4 control-label">DebitType</label>
+		    				<div class="col-sm-4">
+		      		<!-- <p ng-show="!ctrl.edit[details.donorId]">{{ctrl.selectedContact.donationDebitType}} </p> -->
+		      		{{ctrl.selectedContact.donationDebitType}}
+		    				</div>
+		  			</div>
+	  		</form>
+		
+		</div>	
+		
+		<div id="Payment" style="background:#ffffff">
+			<form class="form-horizontal">
+					<div class="form-group">
+		    			<label class="col-sm-4 control-label">Start Date</label>
+		    				<div class="col-sm-4">
+		      					 <p ng-show="!ctrl.edit[details.donorId]">{{ctrl.StartDate}}</p> 
+		      					<p ng-show="ctrl.edit[details.donorId]"><input type="date"  class="form-control" id="donationStartDate" placeholder="Start date" aria-describedby="sizing-addon1"  ng-model="ctrl.StartDate" ng-required="true"></p>
+			    				<span style="color:red" ng-show="create.startdate.$error.required && create.startdate.$dirty">Start date is Required</span>
+		    				</div>
+		  			</div>
+		  			<div class="form-group">
+		    			<label class="col-sm-4 control-label">End Date</label>
+		    				<div class="col-sm-4">
+		      					 <p ng-show="!ctrl.edit[details.donorId]">{{ctrl.EndDate}}</p> 
+		      						<p ng-show="ctrl.edit[details.donorId]"><input type="date"  class="form-control" id="donationEndDate" placeholder="End Date" aria-describedby="sizing-addon1" ng-model="ctrl.EndDate" ng-required="true"></p>
+			      					<span style="color:red" ng-show="create.startDate.$error.endBeforeStart">End date must be on or after start date.</span>
+	                                <span style="color:red" ng-show="create.startdate.$error.invalidDate || create.enddate.$error.invalidDate">Check dates for validity</span>
+	                                <span style="color:red" ng-show="create.enddate.$error.required && create.enddate.$dirty">End date is Required</span>
+		    				</div>
+		  			</div>
+		  			<div class="form-group">
+		    			<label class="col-sm-4 control-label">Amount</label>
+		    				<div class="col-sm-4">
+		      					<!-- {{ctrl.selectedContact.paymentDetailsAmountInRs}} -->
+		    				</div>
+		  			</div>
+		  			<div class="form-group">
+		    			<label class="col-sm-4 control-label">Comments</label>
+		    				<div class="col-sm-4">
+		      					<p ng-show="!ctrl.edit[details.donorId]">{{ctrl.selectedContact.donorComments}}</p>
+		      					<p ng-show="ctrl.edit[details.donorId]"><input type="text" class="form-control" placeholder="comments" aria-describedby="sizing-addon1" ng-model="ctrl.selectedContact.donorComments"></p>
+		    				</div>
+		  			</div>
+		  			<div class="form-group">
+		    			<label class="col-sm-4 control-label">Frequency</label>
+		    				<div class="col-sm-4">
+		      					<p ng-show="!ctrl.edit[details.donorId]">{{ctrl.selectedContact.donationFrequency}}</p>
+		      					<p ng-show="ctrl.edit[details.donorId]"><select class="form-control" placeholder="Frequency" ng-model="ctrl.selectedContact.donationFrequency">
+			                      	<option>{{ctrl.selectedContact.donationFrequency}}</option>
+			                      	<option>--Frequency--</option>    
+			                          <option>Daily</option>
+			                          <option>Weekly</option>
+			                          <option>Quarterly</option>
+			                          <option>Semi-Annualy</option>
+			                          <option>Yearly</option>
+			                          <option>Bi-Monthly</option>
+			                          <option>As and when Presented</option>
+			                    </select></p>
+		    				</div>
+		  			</div>
+		  			<p ng-show="ctrl.edit[details.donorId]">
+		  				<button type="button" class="btn btn-success" ng-click="ctrl.update(ctrl.selectedContact.donorId);ctrl.edit[details.donorId] = !ctrl.edit[details.donorId]" data-toggle="modal" data-target="#myModal" ng-disabled="create.$invalid">Update</button>
+		  				<button class="btn btn-default" ng-click=" ctrl.edit[details.donorId] = !ctrl.edit[details.donorId]" >Undo</button> 
+		  				 <!-- Modal -->
+						  <div class="modal fade" id="myModal" role="dialog">
+						    <div class="modal-dialog">
+						      <!-- Modal content-->
+						      <div class="modal-content" style="height: 270px;">
+ 						        <div class="modal-header" >
+						          <button type="button" class="close" data-dismiss="modal">&times;</button>
+						        </div>
+						        <div class="modal-body" id="mBody">
+						        <p>&#9786;</p>
+						          <p>SuccessFully Updated</p>
+						        </div>
+						        <!-- <div class="modal-footer">
+        							<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      							</div> -->
+						      </div>
+						    </div>
+						  </div>
+		  			</p>
+	  		</form>
+		</div>	
+	</div>
+</div>
+
+
+
+<script>
+$("document").ready(function(){
+    $('[data-toggle="tooltip"]').tooltip();   
+    $('#Bank_d').click(function(e){
+    	e.preventDefault();
+    	$('#Bank').fadeIn("300");
+    	$('#Bank_d').addClass('act');
+    	$('#Personal').hide();
+    	$('#Payment').hide();
+    	$('#Personal_d').removeClass('act');
+    	$('#Payment_d').removeClass('act');
+    });
+    $('#Personal_d').click(function(e){
+    	e.preventDefault();
+    	$('#Personal').fadeIn("300");
+    	$('#Personal_d').addClass('act')
+    	$('#Bank').hide();
+    	$('#Payment').hide();
+    	$('#Bank_d').removeClass('act');
+    	$('#Payment_d').removeClass('act');
+    	
+    });
+    $('#Payment_d').click(function(e){
+    	e.preventDefault();
+    	$('#Payment').fadeIn("300");
+    	$('#Payment_d').addClass('act')
+    	$('#Personal').hide();
+    	$('#Bank').hide();
+    	$('#Personal_d').removeClass('act');
+    	$('#Bank_d').removeClass('act');
+    });
+    
+});
+</script>

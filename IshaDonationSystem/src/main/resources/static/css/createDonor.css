@@ -1,0 +1,104 @@
+@CHARSET "ISO-8859-1";
+.layout{
+/*     border-radius: 3px;
+    border: 1px solid #FFFFE0; */
+    width: 677px;
+    height: 100%;
+   /* background: #D3D3D3;*/
+    box-shadow: 4px 3px 3px 3px #F0F3F4;
+}
+.layout ul {
+	list-style:none;
+	background: rgba(249, 142, 43, 1);
+	border-bottom: 2px solid slategray;
+	
+}
+.layout ul li{
+    display: inline-block;
+   /*  border: 1px solid yellowgreen; */
+    /* background-color: white; */
+    width: 223px;
+    height: 50px;
+    text-align: center;
+    padding-top: 15px;
+}
+/* #log{
+	    margin-left: -39px;
+} */
+.layout ul li a{
+	color: #ffffff; 
+    font-size: 15px;
+    text-decoration: none;
+    font-family: Rockwell, "Courier Bold", Courier, Georgia, Times, "Times New Roman", serif;
+}
+.layout ul li a:hover{
+	cursor:pointer;
+/*	background-color:#EEE8CD; */
+}
+#BankDetails{
+	display:none;
+}
+#PaymentDetails{
+	display:none;
+}
+.active{
+	background: #D3D3D3;;
+    border-bottom: 2px solid white;	
+}
+#personal{
+	 padding: 28px;
+}
+#bank{
+	    padding: 28px;
+}
+#payment{
+	padding: 28px;
+}
+/* input[type="text"],input[type="email"]{
+	border-top:transparent;
+	border-left:transparent;
+	border-right:transparent;
+	border-bottom:1px solid #ffffff;
+	background:#FF7F24;
+	box-shadow:none;
+}
+
+input[type="email"]:focus{
+		outline:none;
+	box-shadow:none;
+	border-bottom:2px solid #ffffff;
+}
+select:placeholder{
+	color:black;
+}
+
+select:focus{
+	outline:none;
+	box-shadow:none;
+	border-bottom:2px solid #ffffff;
+}
+select:placeholder{
+	color:white;
+}
+
+select:focus{
+		outline:none;
+	box-shadow:none;
+	border-bottom:2px solid #ffffff;
+}
+
+select{
+	border-top:transparent;
+	border-left:transparent;
+	border-right:transparent;
+	border-bottom:1px solid #ffffff;
+	background:#FF7F24;
+	box-shadow:none;
+} */
+input[type="text"]{
+	background:#fff;
+}
+
+input[type="text"]::placeholder{
+	color:#000000;
+}

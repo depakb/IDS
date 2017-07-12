@@ -1,0 +1,105 @@
+@CHARSET "ISO-8859-1";
+.outerDiv{
+    border-radius: 3px;
+    border: 1px solid #FFFFE0;
+    width: 400px;
+    height: 100%;
+    background: #FF7F24;
+    box-shadow: 4px 3px 3px 3px #F0F3F4;
+}
+.outerDiv ul {
+	list-style:none;
+	background: #FF7F24;
+	border-bottom: 2px solid #CD5B45;
+	
+}
+.outerDiv ul li{
+    display: inline-block;
+   /*  border: 1px solid yellowgreen; */
+    /* background-color: white; */
+    width: 196px;
+    height: 50px;
+    text-align: center;
+    padding-top: 15px;
+}
+/* #log{
+	    margin-left: -39px;
+} */
+.outerDiv ul li a{
+	color: #E0EEE0;
+    font-size: 24px;
+    text-decoration: none;
+    font-family: Rockwell, "Courier Bold", Courier, Georgia, Times, "Times New Roman", serif;
+}
+.outerdiv ul li a:hover{
+	cursor:pointer;
+	background-color:#EEE8CD;
+}
+#register{
+	display:none;
+}
+.active{
+	background: #FF7F24;
+    border-bottom: 2px solid #D3D3D3;	
+}
+#login{
+	 padding: 28px;
+}
+#register{
+	    padding: 28px;
+}
+input[type="text"],input[type="email"],input[type="password"]{
+	border-top:transparent;
+	border-left:transparent;
+	border-right:transparent;
+	border-bottom:1px solid #ffffff;
+	background:#FF7F24;
+	box-shadow:none;
+}
+input[type="text"]:focus{
+		outline:none;
+	box-shadow:none;
+	border-bottom:2px solid #ffffff;
+}
+input[type="email"]:focus{
+		outline:none;
+	box-shadow:none;
+	border-bottom:2px solid #ffffff;
+}
+input[type="password"]:focus{
+	outline:none;
+	box-shadow:none;
+	border-bottom:2px solid #ffffff;
+}
+select:focus{
+	outline:none;
+	box-shadow:none;
+	border-bottom:2px solid #ffffff;
+}
+select[type="text"]::placeholder{
+	color:white;
+}
+
+select[type="text"]:focus{
+		outline:none;
+	box-shadow:none;
+	border-bottom:2px solid #ffffff;
+}
+
+select[type="text"]{
+	border-top:transparent;
+	border-left:transparent;
+	border-right:transparent;
+	border-bottom:1px solid #ffffff;
+	background:#FF7F24;
+	box-shadow:none;
+}
+input[type="text"]::placeholder{
+	color:white;
+}
+input[type="email"]::placeholder{
+  color: #ffffff;
+}
+input[type="password"]::placeholder{
+  color: #ffffff;
+}

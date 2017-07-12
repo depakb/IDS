@@ -1,0 +1,246 @@
+ <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+ <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+ <link rel="stylesheet" href="css/index.css">
+<div class="col-md-12">
+						  			    	
+						<h3>This Month</h3>  		
+				<div class="col-md-4">
+								
+									<div id="block1">
+										<i class="fa fa-user-o" style="font-size: 35px;"></i>
+										<P>28</P>
+										<h5>NEW DONOR'S</h5>
+									</div><br>
+									</div>
+									<div class="col-md-4">
+									<div id="block2">
+										<i class="fa fa-file-text-o" style="font-size: 35px;"></i>
+										<P>28</P>
+										<h5>NO. OF THE REMITTANCES RECEIVED</h5>
+									</div><br>
+                                    </div>
+                                 
+                                    <div class="col-md-4">
+									<div id="block3">
+										<i class="fa fa-money" style="font-size: 35px;"></i>
+										<P>5000</P>
+										<h5>TOTAL DONATIONS AMOUNT RECEIVED</h5>
+									</div></div>
+							</div>
+				<div class="col-md-12">
+						 <h3>This Quarter Year</h3>
+				             <div class="col-md-4">
+						       <div id="block1">
+							       <i class="fa fa-user-o" style="font-size: 35px;"></i>
+								   <P>70</P>
+								   <h5>NEW DONOR'S</h5>
+						     </div><br>
+				            </div>
+									
+					    <div class="col-md-4">
+					       <div id="block2">
+						    <i class="fa fa-file-text-o" style="font-size: 35px;"></i>
+							  <P>70</P>
+								<h5>NO. OF THE REMITTANCES RECEIVED</h5>
+					       </div><br>
+                       </div>
+                                 
+                       <div class="col-md-4">
+						  <div id="block3">
+						     <i class="fa fa-money" style="font-size: 35px;"></i>
+							  <P>50000</P>
+							 <h5>TOTAL DONATIONS AMOUNT RECEIVED</h5>
+			             </div>
+			          </div>
+				</div>	
+				
+				<div class="col-md-12">
+						 <h3>This  Year</h3>
+				             <div class="col-md-4">
+						       <div id="block1">
+							       <i class="fa fa-user-o" style="font-size: 35px;"></i>
+								   <P>166</P>
+								   <h5>NEW DONOR'S</h5>
+						     </div><br>
+				            </div>
+									
+					    <div class="col-md-4">
+					       <div id="block2">
+						    <i class="fa fa-file-text-o" style="font-size: 35px;"></i>
+							  <P>166</P>
+								<h5>NO. OF THE REMITTANCES RECEIVED</h5>
+					       </div><br>
+                       </div>
+                                 
+                       <div class="col-md-4">
+						  <div id="block3">
+						     <i class="fa fa-money" style="font-size: 35px;"></i>
+							  <P>100000</P>
+							 <h5>TOTAL DONATIONS AMOUNT RECEIVED</h5>
+			             </div>
+			          </div>
+				</div>	
+				<div class="col-md-12">
+				  <h3>To Date</h3>
+			          <div class="col-md-6">
+				         <div id="block1">
+						    <i class="fa fa-group" style="font-size: 35px;"></i>
+							  <P>200</P>
+								<h5>TOTAL DONOR'S</h5>
+			             </div><br>
+	                 </div>
+				 <div class="col-md-6">
+				      <div id="block2">
+						     <i class="fa fa-money" style="font-size: 35px;"></i>
+							  <P>200000</P>
+							 <h5>TOTAL DONATIONS AMOUNT RECEIVED</h5>
+			           </div>
+				 </div>
+			  </div>
+
+
+
+<!-- <div class="col-md-9">
+	<div class="col-md-4">
+		<h3>Donor's List</h3>
+	</div>
+	     
+	<div class="col-md-8" id="donorList">
+
+		<form>
+  						<div class="input-group col-sm-4" style="float:left">
+   						<input type="text" class="form-control" placeholder="Search data here..." ng-model="SearchText">
+   							<div class="input-group-btn">
+     								
+   							</div>
+						 </div>
+						 <div id="searchBar">
+							<i class="fa fa-filter" style="float:left;font-size: 22px;margin-left: -27px;"></i>
+  					<div class="input-group" style="margin-left: -5px;">
+   					<select class="form-control">
+					  <option>1</option>
+					  <option>2</option>
+					  <option>3</option>
+					  <option>4</option>
+					  <option>5</option>
+					</select>
+  					</div>
+					</div>
+				</form>
+</div>
+<div class="row" style="padding-left: 28px;margin-top: 110px;" >
+ 
+				<table class="table table-bordered table-hover" id="tableList">
+			    	<tr>
+			    		<th>ID</th>
+			    		<th>Donor's Name</th>
+			    		<th>Mobile Number</th>
+			    		<th>Email Id</th>
+			    		<th>Donations</th>
+			    		<th>Status</th>
+			    		<th>Actions</th>
+			    		
+			    	</tr>
+			    	<tbody>
+			    	<tr ng-repeat="details in ctrl.DonorsList | filter:SearchText">
+			    		<td>{{details.registrationUserid}}</td>
+			    		<td ng-show="!ctrl.edit[details.consumerCode]">{{details.donorfirstname}}</td>
+			    		<td ng-show="!ctrl.edit[details.consumerCode]">{{details.donormobile}}</td>
+			    		<td ng-show="!ctrl.edit[details.consumerCode]">{{details.donoremail}}</td>
+			    		<td ng-show="!ctrl.edit[details.consumerCode]">Rs.{{details.paymentDetailsAmountInRs}}</td>
+			    		<td ng-show="!ctrl.edit[details.consumerCode]">{{details.createdonorstatus}}</td>
+			    		<td ng-show="!ctrl.edit[details.consumerCode]">
+			    			<button type="button" class="btn btn-warning" id ="view" data-toggle="modal" data-target="#myModal" ng-click="ctrl.selectContact($index)">View</button>
+			    			  Modal
+<div class="modal fade" id="myModal" role="dialog">
+  <div class="modal-dialog">
+  
+    Modal content
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Details</h4>
+      </div>
+      <div class="modal-body">
+        <table class="table table-stripped">
+        <tr>
+        <th>First Name</th>
+        <th>Mobile Number</th>
+        <th>Email</th>
+        <th>Amount</th>
+        <th>Status</th>
+        </tr>
+        <tr>
+        	<td>{{ctrl.selectedContact.donorfirstname}}</td>
+        	<td>{{ctrl.selectedContact.donormobile}}</td>
+        	<td>{{ctrl.selectedContact.donoremail}}</td>
+        	<td>{{ctrl.selectedContact.paymentDetailsAmountInRs}}</td>
+        	<td>{{ctrl.selectedContact.createdonorstatus}}</td>
+        </tr>
+        </table>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+    
+  </div>
+</div>
+  												<button class="btn btn-primary" ng-click=" ctrl.edit[details.consumerCode] = !ctrl.edit[details.consumerCode]" >Edit</button>
+				  			    		</td>
+				  			    		<td ng-show="ctrl.edit[details.consumerCode]">{{details.donorfirstname}}</td>
+				  			    		<td ng-show="ctrl.edit[details.consumerCode]">{{details.donormobile}}</td>
+				  			    		<td ng-show="ctrl.edit[details.consumerCode]">{{details.donoremail}}</td>
+				  			    		<td ng-show="ctrl.edit[details.consumerCode]">Rs.{{details.paymentDetailsAmountInRs}}</td>
+				  			    		<td ng-show="ctrl.edit[details.consumerCode]" >
+				  			    		<select class="form-control">
+				  			    			<option >{{details.createdonorstatus}}</option>
+				  			    			<option >In-Active</option>
+				  			    		</select>
+				  			    		</td>
+				  			    		<td ng-show="ctrl.edit[details.consumerCode]">
+				  			    			<button class="btn btn-success" ng-click="ctrl.update(details);ctrl.edit[details.consumerCode] = !ctrl.edit[details.consumerCode]" >Save</button>
+  												<button class="btn btn-default" ng-click=" ctrl.edit[details.consumerCode] = !ctrl.edit[details.consumerCode]" >Undo</button>
+				  			    		</td>
+									</tr>
+				  			    	
+				  			    </table>
+		  			
+		  		</div>
+						
+					</div>
+					<div class="col-md-3">
+						<h3>This Month</h3>
+							<div id="block1">
+								<i class="fa fa-handshake-o" style="font-size: 35px;color: #00688B;"></i>
+		<P>0</P>
+		<h5>NEW DONOR'S</h5>
+	</div><br>
+	<div id="block2">
+		<i class="fa fa-street-view" style="font-size: 35px;"></i>
+		<P>{{ctrl.OldDonors}}</P>
+		<h5>OLD DONOR'S</h5>
+	</div><br>
+	<div id="block3">
+		<i class="fa fa-users" style="font-size: 35px;"></i>
+			<P>{{ctrl.OldDonors}}</P>
+			<h5>TOTAL DONOR'S</h5>
+		</div>
+</div> -->
+					
+<!-- End of wrapper -->
+<script>
+$("document").ready(function(){
+    $('[data-toggle="tooltip"]').tooltip();   
+    $('view').click(function(){
+    	$('#block1').hide();
+    	
+    	//console.log("sssssssssssss");
+    	$('#overlay').show();
+   		$('.frame').show();
+   		
+   });
+    
+});
+</script>

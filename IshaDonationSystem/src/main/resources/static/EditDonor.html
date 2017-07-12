@@ -1,0 +1,284 @@
+    <div class="col-md-10">
+      <div class="layout">
+        <ul>
+         <li id="personal"><a href="#PersonalInformation">Personal information</a></li>
+         <li id="bank"><a href="#BankDetails">Bank Details</a></li>
+         <li id="payment"><a href="#PaymentDetails">Payment Details</a></li>
+       </ul><br>
+       <div class="tabcontent">
+       <form name="create" ng-submit="ctrl.updateDonor();" id="donorCount">
+         <div id="PersonalInformation">
+          <div class="col-md-12">
+            <div class="col-md-6">
+               <div class="input-group input-group-md">
+						<span class="input-group-addon" id="sizing-addon1"><span class="glyphicon glyphicon-user"></span></span>
+						<input type="text" class="form-control" name="fname" placeholder="Name" aria-describedby="sizing-addon1" ng-model="ctrl.selectedContact.donorName" required ng-minlength="3" ng-maxlength="40">
+						  <span style="color:red" ng-show="create.fname.$dirty && create.fname.$error.required">The name is required.</span>
+                          <span style="color:red" ng-show="create.fname.$dirty && create.fname.$error.minlength">Account Holder Name is too short.</span>
+                          <span style="color:red" ng-show="create.fname.$dirty && create.fname.$error.maxlength">Account Holder Name is too long.</span>
+				</div> <br>
+			
+			<!--  	<div class="input-group input-group-md">
+					<span class="input-group-addon" id="sizing-addon1"><span class="glyphicon glyphicon-user"></span></span>
+					<input type="text" class="form-control" placeholder="Last Name" aria-describedby="sizing-addon1" ng-model="dono.donar_info.donorlastname"> 
+				</div><br>-->
+			
+				<div class="input-group input-group-md">
+					<span class="input-group-addon" id="sizing-addon1"><span class="glyphicon glyphicon-envelope"></span></span>
+					<input type="email" class="form-control" name="email" placeholder="Email" aria-describedby="sizing-addon1" ng-model="ctrl.selectedContact.donorEmail">
+				    <span style="color:red" ng-show="create.email.$dirty && create.email.$invalid">
+                       <span ng-show="create.email.$error.required">Email is required.</span><br>
+                       <span ng-show="create.email.$error.email">Invalid email address.</span>
+                    </span>  
+				</div><br>
+			
+				<div class="input-group input-group-md">
+					<span class="input-group-addon" id="sizing-addon1"><span class="glyphicon glyphicon-phone"></span></span>
+					<input type="text" class="form-control" name="mobile" placeholder="Mobile" aria-describedby="sizing-addon1" ng-model="ctrl.selectedContact.donorPhoneNumber" required ng-minlenght="10" ng-maxlenght="10" ng-pattern="/^[7-9][0-9]{9}$/">
+				     <span style="color:red" ng-show="create.mobile.$dirty && create.mobile.$error.pattern">Please enter valid number</span>
+				</div><br>
+			<!-- 	 <div class="input-group input-group-md">
+	                  <span class="input-group-addon" id="sizing-addon1"><span class="glyphicon glyphicon-road"></span></span>
+	                  <input type="text" class="form-control"  placeholder="Address" aria-describedby="sizing-addon1" ng-model="dono.donar_info.donorAddress">
+				</div> <br>  -->
+					
+			    <div class="input-group input-group-md">
+					<span class="input-group-addon" id="sizing-addon1"><span class="glyphicon glyphicon-user"></span></span>
+					<input type="text" class="form-control" name="Rname1" placeholder="Donor Refernce Name1" aria-describedby="sizing-addon1" ng-model="ctrl.selectedContact.donorRefName1">
+				</div> <br>
+					
+					
+				<div class="input-group input-group-md">
+					<span class="input-group-addon" id="sizing-addon1"><span class="glyphicon glyphicon-user"></span></span>
+					<input type="text" class="form-control" name="Rname2" placeholder="Donor Refernce Name2" aria-describedby="sizing-addon1" ng-model="ctrl.selectedContact.donorRefName2">
+		
+				</div> <br>  	
+ 
+           </div>
+           <div class="col-md-6">
+              		<div class="input-group input-group-md">
+						<span class="input-group-addon" id="sizing-addon1"><span class="glyphicon glyphicon-asterisk"></span></span>
+						<select class="form-control" name="region" ng-model="ctrl.selectedContact.donorRegion" required>
+							<option>{{ctrl.selectedContact.donorRegion}}</option>
+	                      	<option value="" disabled>--Region--</option>    
+	                        <option>Andhra Pradesh</option>
+	                        <option>Telangana</option>
+                      	</select>
+                      	<span style="color:red" ng-show="create.region.$dirty && create.region.$error.required">Region</span>
+					</div> <br>
+	                   <div class="input-group input-group-md">
+		                  <span class="input-group-addon" id="sizing-addon1"><span class="glyphicon glyphicon-tower"></span></span>
+		                      <!-- <input type="text" class="form-control"  placeholder="First Name" aria-describedby="sizing-addon1"> -->
+		                      <select class="form-control" ng-model="ctrl.selectedContact.donorCity">
+		                      <option>{{ctrl.selectedContact.donorCity}}</option>
+		                       	<option value="" disabled>--City--</option>    
+		                        <option>Hyderabad</option>
+		                        <option>Vijayawada</option>
+		                        <option>Vizag</option>
+		                      </select>
+	                   </div> <br>
+	                 <div class="input-group input-group-md">
+	                  <span class="input-group-addon" id="sizing-addon1"><span class="glyphicon glyphicon-bookmark"></span></span>
+	                      <!-- <input type="text" class="form-control"  placeholder="First Name" aria-describedby="sizing-addon1"> -->
+	                      <select class="form-control" ng-model="ctrl.selectedContact.donorState">
+							<option>{{ctrl.selectedContact.donorState}}</option>	                      	
+							<option value="" disabled>--State--</option>    
+	                        <option>Andhra Pradesh</option>
+	                        <option>Telangana</option>
+	                      </select>
+	                   </div> <br>
+                 <div class="input-group input-group-md">
+                  <span class="input-group-addon" id="sizing-addon1"><span class="glyphicon glyphicon-check"></span></span>
+                      <!--  <input type="text" class="form-control"  placeholder="First Name" aria-describedby="sizing-addon1"> --> 
+                      <select class="form-control"  ng-model="ctrl.selectedContact.donorcenter">
+                      	<option>{{ctrl.selectedContact.donorcenter}}</option>
+                      	<option value="" disabled>--Center--</option>    
+                        <option>Madhapur</option>
+                        <option>Kukatpally</option>
+                        <option>Ameerpet</option>
+                        <option>Himayatnagar</option>
+                        <option>Secunderabad</option>  
+                        <option>Dilsukhnagar</option>
+                        <option>Gachibowli</option>  
+                        <option>Vizag</option> 
+                       </select>
+                   </div><br> 
+           
+           </div>
+         </div>
+        </div>
+          <div id="BankDetails">
+            <div class="input-group input-group-md">
+				<span class="input-group-addon" id="sizing-addon1"><span class="glyphicon glyphicon-user"></span></span>
+				<input type="text" class="form-control" name="Aname" placeholder="Account Holder Name" aria-describedby="sizing-addon1" ng-model="ctrl.selectedContact.bankAccountholderName" required ng-minlength="3" ng-maxlength="40">
+			      <span style="color:red" ng-show="create.Aname.$dirty && create.Aname.$error.required">The Account Holder Name is required.</span><br>
+                           <span style="color:red" ng-show="create.Aname.$dirty && create.Aname.$error.minlength">Account Holder Name is too short.</span>
+                            <span style="color:red" ng-show="create.Aname.$dirty && create.Aname.$error.maxlength">Account Holder Name is too long.</span>
+			</div> <br>                  
+					<div class="input-group input-group-md">
+						<span class="input-group-addon" id="sizing-addon1"><span class="glyphicon glyphicon-home"></span></span>
+						<input type="text" class="form-control" placeholder="Bank Name" aria-describedby="sizing-addon1" ng-model="ctrl.selectedContact.bankName">
+					</div> <br>           
+					<div class="input-group input-group-md">
+						<span class="input-group-addon" id="sizing-addon1"><span class="glyphicon glyphicon-th-list"></span></span>
+						<input type="text" class="form-control" name="Anmbr" placeholder="Account No." aria-describedby="sizing-addon1" ng-model="ctrl.selectedContact.bankAccountNumber" required ng-minlength="10" ng-maxlength="18">
+					     <span style="color:red" ng-show="create.Anmbr.$dirty && create.Anmbr.$error.required">Account No is Required</span><br>
+                            <span  style="color:red" ng-show="create.Anmbr.$dirty && create.Anmbr.$error.minlength">Account number is too short</span>
+                            <span  style="color:red" ng-show="create.Anmbr.$dirty && create.Anmbr.$error.maxlength">Account number is too long</span>
+					</div> <br>     
+					<div class="input-group input-group-md">
+						<span class="input-group-addon" id="sizing-addon1"><span class="glyphicon glyphicon-flag"></span></span>
+						<input type="text" class="form-control" placeholder="Branch" aria-describedby="sizing-addon1" ng-model="ctrl.selectedContact.bankBranch">
+					</div> <br>
+					
+				 	<div class="input-group input-group-md">
+						<span class="input-group-addon" id="sizing-addon1"><span class="glyphicon glyphicon-record"></span></span>
+						<input type="text" class="form-control" name="umrn" placeholder="Bank UMRN" aria-describedby="sizing-addon1" ng-model="ctrl.selectedContact.bankMICR" ng-required="false" ng-minlength="20" ng-maxlength="20">
+					    <span style="color:red" ng-show="create.umrn.$dirty && create.umrn.$error.required"></span>
+                           <span  style="color:red" ng-show="((create.umrn.$error.minlength || create.umrn.$error.maxlength) && create.umrn.$dirty)">UMRN code must be 20 digits</span>
+					</div> <br> 
+					                        
+					<div class="input-group input-group-md">
+						<span class="input-group-addon" id="sizing-addon1"><span class="glyphicon glyphicon-record"></span></span>
+						<input type="text" class="form-control" name="ifsc" placeholder="IFSC Code" aria-describedby="sizing-addon1" ng-model="ctrl.selectedContact.bankIfscCode" ng-required="false" ng-minlength="11" ng-maxlength="11">
+					    <span style="color:red" ng-show="create.ifsc.$dirty && create.ifsc.$error.required"></span>
+                           <span  style="color:red" ng-show="((create.ifsc.$error.minlength || create.ifsc.$error.maxlength) && create.ifsc.$dirty)">IFSC code must be 11 digits</span>
+					</div> <br>  
+					<div class="input-group input-group-md">
+						<span class="input-group-addon" id="sizing-addon1"><span class="glyphicon glyphicon-record"></span></span>
+						<input type="text" class="form-control" name="micr" placeholder="MICR" aria-describedby="sizing-addon1" ng-model="ctrl.selectedContact.bankUMRN" ng-required="false" ng-minlength="9" ng-maxlength="9" ng-pattern="/^\d+([,.]\d+)?$/">
+					    <span style="color:red" ng-show="create.micr.$dirty && create.micr.$error.required"></span>
+                           <span style="color:red" ng-show="create.micr.$dirty && create.micr.$error.pattern">MICR should be digits</span><br>
+                           <span style="color:red" ng-show="((create.micr.$error.minlength || create.micr.$error.maxlength) && create.micr.$dirty) ">MICR must be 9 digits</span>
+					</div> <br>                       
+				
+					<div class="input-group input-group-md">
+						<span class="input-group-addon" id="sizing-addon1"><span class="glyphicon glyphicon-check"></span></span>
+						<!-- <input type="text" class="form-control" placeholder="First Name" aria-describedby="sizing-addon1"> -->
+						<select class="form-control" name="account_type" ng-model="ctrl.selectedContact.bankAccountType" required>
+							 <option value="" disabled>--Account Type--</option>
+							 <option ng-repeat="v in type" value="{{v.value}}" title="{{v.value}}">{{v.value}}</option>                   
+						</select>
+						<span style="color:red" ng-show="create.account_type.$dirty && create.account_type.$error.required">Account Type is Required</span>
+					</div>
+          </div>
+          <div id="PaymentDetails">
+          <label>Start Date</label>
+          <div class="input-group input-group-md">
+				<span class="input-group-addon" id="sizing-addon1"><span class="glyphicon glyphicon-calendar"></span></span>
+				<input type="date"  class="form-control" id="donationStartDate" placeholder="Start date" aria-describedby="sizing-addon1"  ng-model="ctrl.selectedContact.donationStartDate" ng-required="true">
+			    <span style="color:red" ng-show="create.startdate.$error.required && create.startdate.$dirty">Start date is Required</span>
+			</div>
+          
+           
+            <!-- <div class="input-group input-group-md">
+				<span class="input-group-addon" id="sizing-addon1"><span class="glyphicon glyphicon-calendar"></span></span>
+				<input type="datetime-local"  class="form-control" name="startdate" placeholder="Start date" aria-describedby="sizing-addon1" ng-click="dono.validateDates();" ng-model="dono.donar_info.donationStartDate" ng-required="true">
+			    <span style="color:red" ng-show="create.startdate.$error.required && create.startdate.$dirty">Start date is Required</span>
+			</div>  -->
+			<label>End Date</label>	
+			<div class="input-group input-group-md">
+				<span class="input-group-addon" id="sizing-addon1"><span class="glyphicon glyphicon-calendar"></span></span>
+				<input type="date"  class="form-control" id="donationEndDate" placeholder="End Date" aria-describedby="sizing-addon1" ng-model="ctrl.selectedContact.donationEndDate" ng-required="true">
+			      <span style="color:red" ng-show="create.startDate.$error.endBeforeStart">End date must be on or after start date.</span>
+	                                             <span style="color:red" ng-show="create.startdate.$error.invalidDate || create.enddate.$error.invalidDate">Check dates for validity</span>
+	                                             <span style="color:red" ng-show="create.enddate.$error.required && create.enddate.$dirty">End date is Required</span>
+	        </div> 
+											
+	<!--  		 <div class="input-group input-group-md">
+				<span class="input-group-addon" id="sizing-addon1"><span class="glyphicon glyphicon-calendar"></span></span>
+				<input type="datetime-local"  class="form-control" name="enddate" placeholder="End Date" aria-describedby="sizing-addon1" ng-click="dono.validateDates();" ng-model="dono.donar_info.donationEndDate" ng-required="true">
+			      <span style="color:red" ng-show="create.startDate.$error.endBeforeStart">End date must be on or after start date.</span>
+	                                             <span style="color:red" ng-show="create.startdate.$error.invalidDate || create.enddate.$error.invalidDate">Check dates for validity</span>
+	                                             <span style="color:red" ng-show="create.enddate.$error.required && create.enddate.$dirty">End date is Required</span>
+	        </div>  -->
+			
+		<!--  	<div class="input-group input-group-md">
+				<span class="input-group-addon" id="sizing-addon1"><span class="glyphicon glyphicon-usd"></span></span>
+				<input type="text" class="form-control" name="amount" placeholder="Amount in Rupees" aria-describedby="sizing-addon1" ng-model="dono.donar_info.paymentDetailsAmountInRs" required ng-pattern="/^\d+([,.]\d+)?$/" ng-maxlength="13">
+			    <span style="color:red" ng-show="create.amount.$dirty && create.amount.$error.pattern">It should be numbers</span><br>
+                         <span style="color:red" ng-show="create.amount.$dirty && create.amount.$error.maxlength">It is too long</span>
+			</div> <br>-->
+			<label>Create Date</label>
+			<div class="input-group input-group-md">
+				<span class="input-group-addon" id="sizing-addon1"><span class="glyphicon glyphicon-th-list"></span></span>
+				<input type="date" class="form-control" placeholder="Create Date" aria-describedby="sizing-addon1" ng-model="ctrl.selectedContact.createdonordate" required min="{{date | date:'yyyy-MM-dd'}}">
+			</div> <br>
+			
+			<div class="input-group input-group-md">
+				<span class="input-group-addon" id="sizing-addon1"><span class="glyphicon glyphicon-th-list"></span></span>
+				<input type="text" class="form-control" placeholder="Create By" aria-describedby="sizing-addon1" ng-model="ctrl.selectedContact.creatorName">
+			</div> <br>
+			
+			<div class="input-group input-group-md">
+				<span class="input-group-addon" id="sizing-addon1"><span class="glyphicon glyphicon-th-list"></span></span>
+				<input type="text" class="form-control" placeholder="comments" aria-describedby="sizing-addon1" ng-model="ctrl.selectedContact.donorComments">
+			</div> <br> 
+			
+			<div class="input-group input-group-md">
+					      <span class="input-group-addon" id="sizing-addon1"><span class="glyphicon glyphicon-check"></span></span>
+					           <!-- <input type="text" class="form-control"  placeholder="" aria-describedby="sizing-addon1"> -->
+			                      <select class="form-control" placeholder="Frequency" ng-model="ctrl.selectedContact.donationFrequency">
+			                      	<option>{{ctrl.selectedContact.donationFrequency}}</option>
+			                      	<option>--Frequency--</option>    
+			                          <option>Daily</option>
+			                          <option>Weekly</option>
+			                          <option>Quarterly</option>
+			                          <option>Semi-Annualy</option>
+			                          <option>Yearly</option>
+			                          <option>Bi-Monthly</option>
+			                          <option>As and when Presented</option>
+			                      </select>
+					 	</div> <br> 
+											
+	
+		 <button type="submit" class="btn btn-primary" >Update</button>
+          
+          
+          </div>
+          </div>
+     </div>
+  </div>
+  <script>
+	$("document").ready(function(){
+		$('#personal').click(function(e){
+			e.preventDefault();
+			$('#personal').addClass("active");
+			$('#PersonalInformation').fadeIn(500);
+			$('#BankDetails').hide();
+			$('#PaymentDetails').hide();
+			$('#bank').removeClass("active");
+			$('#payment').removeClass("active");
+		});
+		$('#bank').click(function(e){
+			e.preventDefault();
+			$('#bank').addClass("active");
+			$('#BankDetails').fadeIn(500);
+			$('#PaymentDetails').hide();
+			$('#PersonalInformation').hide();
+			$('#personal').removeClass("active");
+			$('#payment').removeClass("active");
+		});
+		$('#payment').click(function(e){
+			e.preventDefault();
+			$('#payment').addClass("active");
+			$('#PaymentDetails').fadeIn(500);
+			$('#PersonalInformation').hide();
+			$('#BankDetails').hide();
+			$('#personal').removeClass("active");
+			$('#bank').removeClass("active");
+		});
+	});
+
+	$("#donationStartDate, #donationEndDate").date();
+
+	$("#donationEndDate").change(function () {
+	    var donationStartDate = document.getElementById("donationStartDate").value;
+	    var donationEndDate = document.getElementById("donationEndDate").value;
+	 
+	    if ((Date.parse(donationEndDate) <= Date.parse(donationStartDate))) {
+	        alert("End date should be greater than Start date");
+	        document.getElementById("donationEndDate").value = "";
+	    }
+	});
+</script>

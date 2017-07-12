@@ -1,0 +1,113 @@
+<!DOCTYPE html >
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>Index</title>
+<!-- bootstrap css files -->
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<!-- Bootstrap js files -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+<!-- bootstrap fonts -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<!-- angularjs js file -->
+<script type="text/javascript" src="js/angular.js"></script>
+<script type="text/javascript" src="js/angular-resource.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-resource/1.6.4/angular-resource.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular-route.js"></script>
+<script type="text/javascript" src="js/controller/controller.js"></script>
+<script type="text/javascript" src="js/service/service.js"></script>
+<script type="text/javascript" src="js/dirPagination.js"></script>
+<script   src="https://code.jquery.com/jquery-3.2.1.js"></script>
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" >
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" >
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" ></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<!-- css files -->
+
+<link rel="stylesheet" href="css/index.css">
+<link rel="stylesheet" href="css/createDonor.css">
+</head>
+<body ng-app="loginApp" ng-controller="loginController as ctrl">
+
+<div class="container-fluid" >
+	<div class="row" id="toolBar">
+		<div class="col-xs-12 col-md-4" id="menuBar">
+			<img src="images/logo.png" alt="Isha Foundation">
+		</div>
+		<div class="col-xs-12 col-md-4" id="Dash">Dashboard</div>
+			<div class="col-xs-12 col-md-4">
+				<div id="user-info">
+					<i class="glyphicon glyphicon-user" style="font-size:20px"></i>
+					<h5 id="user-info-name" style="margin-left: 58px;margin-top:-20px;">Hi {{ctrl.registerd.userName}} {{ctrl.logedUser.userName}}</h5>
+				</div>
+				<div id="settings-sign-out">
+					<ul>
+						<li><a href="#"><i class="glyphicon glyphicon-cog" data-toggle="tooltip"  data-placement="bottom"  title="settings"></i> </a></li>
+						<li><a href="#"><i class="material-icons" data-toggle="tooltip"  data-placement="bottom" title="help?" style="margin-top: 9px;">&#xe8fd;</i></a></li>
+						<li><a href="#"><i class="glyphicon glyphicon-log-out" data-toggle="tooltip" data-placement="bottom"  title="sign-out" ></i></a></li>
+					</ul>
+				</div>
+			</div>
+	</div>
+</div>
+
+<!-- start of wrapper -->
+	<div id="wrapper">
+		<!-- Sidebar -->
+			<div  id="sidebar-wrapper" >
+				<ul class="sidebar-nav">
+							<li style="margin-top: -36px;color:#fff;">MENU <i class="glyphicon glyphicon-th" style="margin-left: 82px;font-size: 20px;"></i></li>
+							<li ng-click="ctrl.reload();"><a href="#!dashboard" >DASHBOARD</a></li>
+				  			<li ng-click="ctrl.reload();"><a href="#!donor_info">DONOR INFO</a></li>
+				  			<li ng-click="ctrl.reload();"><a href="#!BulkDonor">BULK OPERATIONS</a></li>
+				  			<li ng-click="ctrl.reload();"><a href="#!Reports">REPORTS</a></li>
+				</ul> 
+			</div>
+			<div id="sidebar-wrapper2" class="nav2">
+				<ul class="sidebar-nav" style="padding-top: 35px;">
+					<li > <i class="glyphicon glyphicon-home"></i></li>
+				  	<li><i class="fa fa-user-plus"></i></li>
+				  	<li><i class="glyphicon glyphicon-floppy-save"></i></li>
+				  	<li><i class="fa fa-folder-open"></i></li>
+				</ul>
+			</div>
+			<!-- <a href="#" id="menu-toggle"><i class="glyphicon glyphicon-list" style="font-size: 30px; margin-left: 60px;" id="act"></i></a> -->
+		<!-- end of sidebar -->
+		
+		<!-- page content -->
+			<div id="page-content-wrapper">
+				<div id="container-fluid" id="containerBody" style="background:#F0F0F0">
+					<div class="row" style="margin-left:-1px;height:100%">
+					
+						<div ng-view></div>
+					
+					</div>
+				</div>
+			</div>
+	</div>
+<!-- End of wrapper -->
+<script type="text/javascript">
+$("document").ready(function(){
+    $('[data-toggle="tooltip"]').tooltip();   
+    $('view').click(function(){
+    	$('#block1').hide();
+    	
+    	//console.log("sssssssssssss");
+    	$('#overlay').show();
+   		$('.frame').show();
+   		
+   });
+    
+});
+</script>
+</body>
+</html>
